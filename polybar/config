@@ -3,17 +3,17 @@
 ;   To learn more about how to configure Polybar
 ;   go to https://github.com/jaagr/polybar
 ;
-;   The README contains alot of information
+;   The README contains a lot of information
 ;
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #1b181b
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #ab9bab
-foreground-alt = #555
+background = ${xrdb:color0}
+;background = #1b181b
+background-alt = #222
+foreground = ${xrdb:color7}
+;foreground = #ab9bab
+foreground-alt = #fff
 primary = #516aec
 secondary = #ca402b
 alert = #bd2c40
@@ -21,11 +21,11 @@ alert = #bd2c40
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 24
 ;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
-fixed-center = false
+;offset-y = 4
+radius = 0
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -33,8 +33,8 @@ foreground = ${colors.foreground}
 line-size = 0
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+border-size = 1 
+border-color = #000
 
 padding-left = 0
 padding-right = 2
@@ -47,7 +47,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;2
 
 modules-left = bspwm filesystem
 modules-center = xwindow
-modules-right = xbacklight wlan cpu memory temperature battery date
+modules-right = volume xbacklight wlan cpu memory temperature battery date
 
 tray-position = right
 tray-padding = 2
@@ -197,7 +197,7 @@ interval = 5
 date =
 date-alt = " %Y-%m-%d"
 
-time = %H:%M
+time = %I:%M%P
 time-alt = %H:%M:%S
 
 format-prefix = 
@@ -210,14 +210,14 @@ label =  %time% %date%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = 
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
-bar-volume-width = 10
+bar-volume-width = 5 
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
